@@ -5,8 +5,8 @@ import Calculator from "./components/Calculator";
 import { createStore } from "redux";
 import historyReducer from "./reducers/history";
 import { history } from "./actions/history";
-// Connects global store-store to our entire Calculator-App
-// import { Provider } from "react-redux";
+// Connects global store-store to our entire Calculator-App(Helps in interact between react and redux store we created)
+import { Provider } from "react-redux";
 
 //Created a Global store Since store needs a reducer so we pass in the reducer in the store and import it
 const store = createStore(historyReducer);
@@ -17,8 +17,8 @@ store.subscribe(() => console.log(store.getState()));
 store.dispatch(history("Past Calculations"));
 
 ReactDOM.render(
-  // <Provider>
-  <Calculator />,
-  // </Provider>
+  <Provider>
+    <Calculator />,
+  </Provider>,
   document.getElementById("root")
 );
