@@ -2,12 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import Calculator from "./components/Calculator";
-import { createStore } from "redux";
+import ResultList from "./components/ResultList";
 import historyReducer from "./reducers/history";
 import { history } from "./actions/history";
+import { createStore } from "redux";
 // Connects global store-store to our entire Calculator-App
 import { Provider } from "react-redux";
-import ResultList from "./components/ResultList";
 
 //Created a Global store Since store needs a reducer so we pass in the reducer in the store and import it
 const store = createStore(
