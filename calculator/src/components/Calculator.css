@@ -1,0 +1,88 @@
+/* Color Palette:
+.Glowing-Blue-1-hex { color: #230A59; }
+.Glowing-Blue-2-hex { color: #3E38F2; }
+.Glowing-Blue-3-hex { color: #0029FA; }
+.Glowing-Blue-4-hex { color: #5C73F2; }
+.Glowing-Blue-5-hex { color: #829FD9; }
+*/
+
+.header {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  /* flex-wrap: wrap; */
+  background-color: #230a59;
+  color: white;
+  font-weight: 1000;
+}
+
+body {
+  background-color: #5c73f2;
+  /* background-image: url("/public/images/calculator.jpg"); */
+}
+
+.myForm {
+  border: 10px solid #829fd9;
+  border-radius: 15px;
+  /* box-sizing: border-box; */
+}
+
+/* Targeting the input fields */
+input {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 10px;
+  margin: 8px 15px;
+}
+/* Targeting the input field of Arithmetic operation */
+select {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: flex;
+  flex-wrap: wrap;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+/* Targeting the input field of dropdown with label */
+.dropdownSelect {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding: 12px 20px;
+  margin: 8px 10;
+}
+/* Targeting the submit button */
+input[type="submit"] {
+  width: 50%;
+  height: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: larger;
+  font-weight: bolder;
+  background-color: #3e38f2;
+  color: whitesmoke;
+  padding: 14px 20px;
+  margin-left: 10px 0;
+  border: none;
+  border: 2px solid black;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+p {
+  width: 50%;
+  height: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 14px 20px;
+  margin-left: 10px 0;
+}
