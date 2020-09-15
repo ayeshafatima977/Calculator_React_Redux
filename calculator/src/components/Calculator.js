@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import "./Calculator.css";
+//Link Redux to our react-component
+import { connect } from "react-redux";
+import { history } from "../actions/history";
+import historyReducer from "../reducers/history";
 
-function Calculator() {
+function Calculator(props) {
   /* De-constructor 
    Step1:Setup for state to keep track of user input value.Use state function is returning two values in an array and userInput is first variable which holds the state value (i.e) it will be assigned first item in an array 
   and set User input is  a function that we use to update state value in the array
@@ -15,6 +19,10 @@ function Calculator() {
 
   const Calculate = (eventResult) => {
     eventResult.preventDefault();
+    // 1)Passing our local state:result 2) to our action:history 3) that is operated by our reducer 4)to update our store
+    //Because of connect() and <Provider> we have access to dispatch via our props
+    props.dispatch(history(result));
+
     switch (operation) {
       case "Addition":
         // .toFixed is used here to have only 5 decimal values and Number data type is used to enforce the input as Number
@@ -102,9 +110,19 @@ function Calculator() {
           <strong>Result:</strong>
           <em>{result}</em>
         </p>
+        <p>
+          <strong>Past Calculations:</strong>
+          <em>{result}</em>
+        </p>
       </form>
     </div>
   );
 }
 
-export default Calculator;
+export default connect(
+  //We setup a map state to props function
+  //State from Redux store represented in props as
+  (state) => {
+    return { pastHistory: state };
+  }
+)(Calculator);
