@@ -110,10 +110,10 @@ function Calculator(props) {
           <strong>Result:</strong>
           <em>{result}</em>
         </p>
-        <p>
+        {/* <p>
           <strong>Past Calculations:</strong>
           <em>{result}</em>
-        </p>
+        </p> */}
       </form>
     </div>
   );
