@@ -12,6 +12,7 @@
 8. Output to the user the result of the calculation onSubmit or onClick.
 9. Store and output a list of prior calculations the user has done in and from React-Redux store.
    Hint: Consider starting with the Redux Action / Reducer / Store for this assignment so that you’ll know how you’ll be interacting with your data throughout the project.
+10. Use React Router to have a page for the calculator and a page for prior calculations (via Routes.)
 
 # Challenges
 
@@ -21,6 +22,9 @@
 4. Have the output list display in a different component than the Calculator component, illustrating one of the strengths of Redux as a global state management tool.
 5. Add a “light / dark mode” feature that is kept track of using a Redux store.
    Hint: Look into the combineReducers() function afforded by Redux for managing multiple “states”
+6. Add a real “home” page with some information about your assignment.
+Hint: Maybe some content describing how you built the calculator, and things you learned along the way! Try generating some basic instructions on how to use your calculator, and what competencies it demonstrates. This could make a nice portfolio piece if you take the time!
+
 
 # Trello Link:
 
