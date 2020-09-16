@@ -51,6 +51,8 @@ https://trello.com/b/Zng42Tr6/calculator-js
 20. HomeWork Help-Instructor Tammy -Bug Fix for Empty lists values initially and advised another method without using UseEffect()
 21. UseEffect(): https://www.youtube.com/watch?v=0ZJgIjIuY7U&feature=youtu.be
 22. Combine Reducers:https://www.youtube.com/watch?v=EKsoj96HQGY
-23. Theme: https://styled-components.com/
+23. Implementing Theme: https://www.smashingmagazine.com/2020/04/dark-mode-react-apps-styled-components/
 24. https://styled-components.com/
-25. 
+25. https://css-tricks.com/a-dark-mode-toggle-with-react-and-themeprovider/
+26. https://github.com/MaximeHeckel/react-hook-context-emotion-dark-mode/tree/135c9694146df23aaceb8c72397bcf512addfa06
+27. https://medium.com/better-programming/how-to-implement-dark-mode-in-your-react-app-63c1a0c5e337
