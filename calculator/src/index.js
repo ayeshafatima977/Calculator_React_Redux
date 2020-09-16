@@ -16,7 +16,7 @@ const store = createStore(
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 //For testing only--We can run the instructions every time the store is updated using stores subscribe method.
-store.subscribe(() => console.log(store.getState()));
+// store.subscribe(() => console.log(store.getState()));
 
 // Dispatch to send actions to our stores Reducer-It expects properly formatted action
 store.dispatch(history(""));
