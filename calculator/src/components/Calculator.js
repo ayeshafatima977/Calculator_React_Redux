@@ -3,7 +3,7 @@ import "./Calculator.css";
 //Link Redux to our react-component
 import { connect } from "react-redux";
 import { history } from "../actions/history";
-// import historyReducer from "../reducers/history";
+import historyReducer from "../reducers/history";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "../components/globalStyles";
 import { lightTheme, darkTheme } from "../components/Theme";
