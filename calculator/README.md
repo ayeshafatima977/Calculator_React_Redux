@@ -51,3 +51,6 @@ https://trello.com/b/Zng42Tr6/calculator-js
 20. HomeWork Help-Instructor Tammy -Bug Fix for Empty lists values initially and advised another method without using UseEffect()
 21. UseEffect(): https://www.youtube.com/watch?v=0ZJgIjIuY7U&feature=youtu.be
 22. Combine Reducers:https://www.youtube.com/watch?v=EKsoj96HQGY
+23. Theme: https://styled-components.com/
+24. https://styled-components.com/
+25. 

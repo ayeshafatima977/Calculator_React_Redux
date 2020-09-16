@@ -4,6 +4,9 @@ import "./Calculator.css";
 import { connect } from "react-redux";
 import { history } from "../actions/history";
 // import historyReducer from "../reducers/history";
+import { ThemeProvider } from "styled-components";
+import { GlobalStyles } from "../components/globalStyles";
+import { lightTheme, darkTheme } from "../components/Theme";
 
 function Calculator(props) {
   /* De-constructor 
@@ -16,6 +19,17 @@ function Calculator(props) {
   const [result, setResult] = useState("0");
   const [newHistory, setNewHistory] = useState("0");
   const [historyList, setHistoryList] = useState([]);
+
+  //--Borrowed Snippet for Theme Starts--
+  //@Link: https://www.smashingmagazine.com/2020/04/dark-mode-react-apps-styled-components/
+  /*In order for us to create a toggling method, we need a state that holds our theme’s initial color value. 
+  So, we create a theme state, and set the initial state to light, using the useState hook.Now, for the toggling functionality.
+  The themeToggler method uses a ternary operator to check the state of the theme, and it toggles either dark or light based on the value of the condition.*/
+  const [theme, setTheme] = useState("light");
+  const themeToggler = () => {
+    theme === "light" ? setTheme("dark") : setTheme("light");
+  };
+  //--Borrowed Snippet for Theme Ends--
 
   //SECOND METHOD:USE-EFFECT()
   //What do you want to happen when variable changes when using UseEffect--> You want your result state updated
@@ -64,66 +78,71 @@ function Calculator(props) {
   };
 
   return (
-    <>
-      <h1 className="header">Simple Calculator</h1>
-      <form className="myForm" onSubmit={Calculate}>
-        <label htmlFor="input1">
-          <strong>Enter First Number</strong>
-        </label>
-        <input
-          type="number"
-          id="input1"
-          /*Step2:To keep track of changes in realtime and grab the event on change we use fat arrow function.
+    <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+      <>
+        <GlobalStyles />
+        <button onClick={themeToggler}>Switch Theme</button>
+
+        <h1 className="header">Simple Calculator</h1>
+        <form className="myForm" onSubmit={Calculate}>
+          <label htmlFor="input1">
+            <strong>Enter First Number</strong>
+          </label>
+          <input
+            type="number"
+            id="input1"
+            /*Step2:To keep track of changes in realtime and grab the event on change we use fat arrow function.
         So whenever  text input is changed we setUserInput updates.We want to grab the value of the targeted input.
         Test:Go to Components section and select calculator component and type in any value in input it should display the value in state
         */
-          onChange={(e) => {
-            setUserInput1(e.target.value);
-          }}
-          value={userInput1}
-        />
-        {/* Testing: 
+            onChange={(e) => {
+              setUserInput1(e.target.value);
+            }}
+            value={userInput1}
+          />
+          {/* Testing: 
         <p>
           <strong>You have entered:</strong>
           <em>{userInput1}</em>
         </p>*/}
-        <label htmlFor="input2">
-          <strong>Enter Second Number</strong>
-        </label>
-        <input
-          type="number"
-          id="input2"
-          onChange={(event) => {
-            setUserInput2(event.target.value);
-          }}
-          value={userInput2}
-        />
-        {/* Testing:
+          <label htmlFor="input2">
+            <strong>Enter Second Number</strong>
+          </label>
+          <input
+            type="number"
+            id="input2"
+            onChange={(event) => {
+              setUserInput2(event.target.value);
+            }}
+            value={userInput2}
+          />
+          {/* Testing:
         <p>
           <strong>You have entered:</strong>
           <em>{userInput2}</em>
         </p> */}
-        <label htmlFor="operation" className="dropdownSelect">
-          <strong>Select Arithmetic Operation</strong>
-          <select
-            onChange={(eventResult) => {
-              setOperation(eventResult.target.value);
-            }}
-          >
-            <option value="">--Select an Operation--</option>
-            <option value="+">+</option>
-            <option value="-">-</option>
-            <option value="*">*</option>
-            <option value="/">/</option>
-          </select>
-        </label>
-        <input className="btn" type="submit" value="Calculate" />
-        <p>
-          <strong>Result:</strong>
-          <em>{result}</em>
-        </p>
-      </form>
-    </>
+          <label htmlFor="operation" className="dropdownSelect">
+            <strong>Select Arithmetic Operation</strong>
+            <select
+              onChange={(eventResult) => {
+                setOperation(eventResult.target.value);
+              }}
+            >
+              <option value="">--Select an Operation--</option>
+              <option value="+">+</option>
+              <option value="-">-</option>
+              <option value="*">*</option>
+              <option value="/">/</option>
+            </select>
+          </label>
+          <input className="btn" type="submit" value="Calculate" />
+          <p>
+            <strong>Result:</strong>
+            <em>{result}</em>
+          </p>
+        </form>
+      </>
+    </ThemeProvider>
   );
 }
 

@@ -8,6 +8,14 @@ import { history } from "./actions/history";
 import { createStore } from "redux";
 // Connects global store-store to our entire Calculator-App
 import { Provider } from "react-redux";
+// import { ThemeProvider } from "./ThemeContext";
+
+// //Created Combine Reducers
+// const combineReducers = redux.combineReducers;
+// const rootReducer = combineReducers({
+//   lightTheme: lightThemeReducer,
+//   darkTheme: darkThemeReducer,
+// });
 
 //Created a Global store Since store needs a reducer so we pass in the reducer in the store and import it
 const store = createStore(
@@ -15,6 +23,7 @@ const store = createStore(
   //@Link :https://github.com/zalmoxisus/redux-devtools-extension
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
+
 //For testing only--We can run the instructions every time the store is updated using stores subscribe method.
 // store.subscribe(() => console.log(store.getState()));
 
@@ -23,9 +32,11 @@ const store = createStore(
 // store.dispatch(history(""));
 
 ReactDOM.render(
+  // <ThemeProvider>
   <Provider store={store}>
     <Calculator />,
     <ResultList />
   </Provider>,
+  // </ThemeProvider>
   document.getElementById("root")
 );
