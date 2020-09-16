@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 //We don't need actions since we are not adding/deleting any stuff here
 
 function ResultList(props) {
+  console.log("props", props);
   return (
     <>
       <h2>Past Calculations:</h2>

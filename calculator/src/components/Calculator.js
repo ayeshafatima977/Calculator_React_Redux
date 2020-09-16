@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./Calculator.css";
 //Link Redux to our react-component
 import { connect } from "react-redux";
@@ -10,56 +10,43 @@ function Calculator(props) {
    Step1:Setup for state to keep track of user input value.Use state function is returning two values in an array and userInput is first variable which holds the state value (i.e) it will be assigned first item in an array 
   and set User input is  a function that we use to update state value in the array
   */
-  const [userInput1, setUserInput1] = useState("0"); //Let Default value be empty/zero
-  const [userInput2, setUserInput2] = useState("0"); //Let Default value be empty/zero
+  const [userInput1, setUserInput1] = useState(""); //Let Default value be empty/zero
+  const [userInput2, setUserInput2] = useState(""); //Let Default value be empty/zero
   const [operation, setOperation] = useState("");
-  const [result, setResult] = useState("0");
-  const [newHistory, setNewHistory] = useState("0");
-  const [historyList, setHistoryList] = useState([]);
+  const [result, setResult] = useState("");
 
-  //What do you want to happen when variable changes when using UseEffect--> You want your result state updated
-  //We don't want a history item added every time there is a change, so that should still be a function triggered by form submit
-  //@Courtesy-Thankyou! Kristzina Pap for troubleshooting the error undefined adn troubleshooting UseEffect() function
+  // First METHOD:
+  // @Courtesy-Thankyou Instructor-Tammy helping me figure out the error of two empty bullet points and showing a way without using UseEffect()
+  const Calculate = (eventResult) => {
+    eventResult.preventDefault();
+    let setResult_1 = null;
 
-  useEffect(() => {
-    // Function for selection of operations
     switch (operation) {
       case "+":
         //Number data type is used to enforce the input as Number otherwise sometimes it shows undefined if it takes as a string.
-        setResult((Number(userInput1) + Number(userInput2)).toFixed(5));
+        setResult_1 = (Number(userInput1) + Number(userInput2)).toFixed(5);
+        setResult(setResult_1);
         break;
       case "-":
-        setResult(Number(userInput1) - Number(userInput2).toFixed(5));
+        setResult_1 = (Number(userInput1) - Number(userInput2)).toFixed(5);
+        setResult(setResult_1);
         break;
       case "*":
-        setResult(Number(userInput1) * Number(userInput2).toFixed(5));
+        setResult_1 = (Number(userInput1) * Number(userInput2)).toFixed(5);
+        setResult(setResult_1);
         break;
       case "/":
-        setResult(Number(userInput1) / Number(userInput2).toFixed(5));
+        setResult_1 = (Number(userInput1) / Number(userInput2)).toFixed(5);
+        setResult(setResult_1);
         break;
       default:
         break;
     }
-
-    // To see the output in expression/equation form
-    setNewHistory(`${userInput1}${operation}${userInput2} = ${result}`);
-    /* Testing: console.log(Number(userInput1));console.log(Number(userInput2)); console.log(Calculate);*/
-
-    // When below variable changes useEffect is triggered
-  }, [userInput1, userInput2, operation, result]);
-
-  const Calculate = (eventResult) => {
-    eventResult.preventDefault();
-
     // 1)Passing our local state:result 2) to our action:history 3) that is operated by our reducer 4)to update our store
     //Because of connect() and <Provider> we have access to dispatch via our props
-    props.dispatch(history(newHistory));
-    // Creating a temporary historyList and add the updated values to newHistory  as did previously for reducers
-    const tempHistory = [...historyList];
-    tempHistory.push(newHistory);
-    //Since setHistory is a function we have assigned temp history to it
-    setHistoryList(tempHistory);
-    return historyList;
+    let resultHistory = `${userInput1}${operation}${userInput2} = ${setResult_1}`;
+    // console.log(resultHistory);
+    props.dispatch(history(resultHistory));
   };
 
   return (

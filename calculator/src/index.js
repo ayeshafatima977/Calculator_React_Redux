@@ -19,7 +19,7 @@ const store = createStore(
 // store.subscribe(() => console.log(store.getState()));
 
 // Dispatch to send actions to our stores Reducer-It expects properly formatted action
-store.dispatch(history(""));
+// store.dispatch(history(""));
 
 ReactDOM.render(
   <Provider store={store}>

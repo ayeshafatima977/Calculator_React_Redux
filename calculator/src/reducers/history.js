@@ -1,5 +1,5 @@
-//Let default state be an empty array where our history will go
-const historyReducer = (state = ["0"], action) => {
+//Let default state be an empty array where our history will go: Don't keep 0 otherwise the list will be empty
+const historyReducer = (state = [], action) => {
   switch (action.type) {
     case "HISTORY":
       //Prepare a result object
