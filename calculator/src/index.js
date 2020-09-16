@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
+import HomePage from "./components/HomePage";
 import Calculator from "./components/Calculator";
 import ResultList from "./components/ResultList";
 import historyReducer from "./reducers/history";
@@ -36,7 +37,8 @@ ReactDOM.render(
   // <ThemeProvider>
   <Provider store={store}>
     <Router>
-      <Route path="/" component={Calculator} exact />
+      <Route path="/" component={HomePage} exact />
+      <Route path="/calculator" component={Calculator} />
       <Route path="/past-calculations" component={ResultList} />
     </Router>
     {/* <Calculator />,
