@@ -1,68 +1,53 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project: Simple Calculator using React-Redux..
 
-## Available Scripts
+# Requirements:
 
-In the project directory, you can run:
+1. Use “npx create-react-app” to start a new React project.
+2. Create a “Calculator” component.
+3. Use a prop to output a unique heading for the component.
+4. Include two input fields that can take in numeric values, in your component return.
+5. Create a select (drop down box) which allows the user to choose what operation to apply to the two numeric fields, in your component return.
+6. Your operations must include addition, subtraction, multiplication, and division.
+7. Use state to keep track of the entered input values and current select value.
+8. Output to the user the result of the calculation onSubmit or onClick.
+9. Store and output a list of prior calculations the user has done in and from React-Redux store.
+   Hint: Consider starting with the Redux Action / Reducer / Store for this assignment so that you’ll know how you’ll be interacting with your data throughout the project.
 
-### `npm start`
+# Challenges
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. Make it look nice with some CSS!
+2. Protect data input - return a message to the user if the user inputs a non-numeric character / request.
+3. Have a single input field which can read the operations.
+4. Have the output list display in a different component than the Calculator component, illustrating one of the strengths of Redux as a global state management tool.
+5. Add a “light / dark mode” feature that is kept track of using a Redux store.
+   Hint: Look into the combineReducers() function afforded by Redux for managing multiple “states”
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+# Trello Link:
 
-### `npm test`
+https://trello.com/b/Zng42Tr6/calculator-js
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Citations:
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+1. https://github.com/TECHCareers-by-Manpower/4.2-react-redux-to-do
+2. https://github.com/TECHCareers-by-Manpower/react-assignment-calculator-ayeshafatima977
+3. https://www.youtube.com/watch?v=EKsoj96HQGY
+4. Using Forms: https://reactjs.org/docs/forms.html
+5. Using Select : https://codepen.io/gaearon/pen/JbbEzX?editors=0010
+6. https://medium.com/capital-one-tech/how-to-work-with-forms-inputs-and-events-in-react-c337171b923b
+7. JSX should have one parent element only:
+   https://stackoverflow.com/questions/48886726/react-expressions-must-have-one-parent-element
+8. Components and Props: https://reactjs.org/docs/components-and-props.html
+9. React CSS styling : https://www.w3schools.com/css/css_form.asp https://www.w3schools.com/react/react_css.asp
+10. https://medium.com/@nitinpatel_20236/how-to-build-a-simple-calculator-application-with-react-js-bc10a4568bbd
+11. https://reactjsexample.com/tag/calculator/
+12. https://www.reddit.com/r/learnjavascript/comments/3gi93u/basic_calculator_with_dropdown/
+13. https://www.skptricks.com/2018/05/create-dropdown-using-reactjs.html
+14. https://github.com/tommymcglynn/mortgage-calculator-react/tree/master/src
+15. https://www.pluralsight.com/guides/how-to-build-a-basic-form-calculator-in-reactjs
+16. Different props: https://www.npmjs.com/package/react-dropdown-tree-select
+17. https://medium.com/@kris101/create-a-simple-calculator-app-in-react-9fd645bb2\1ac
+18. https://medium.com/@kris101/create-a-simple-calculator-app-in-react-9fd645bb21ac
+19. Peer Help in Troubleshooting Error:undefined and UseEffect(): Krisztina Pap.
+20. HomeWork Help-Instructor Tammy -Bug Fix for Empty lists values initially and advised another method without using UseEffect()
+21. UseEffect(): https://www.youtube.com/watch?v=0ZJgIjIuY7U&feature=youtu.be
+22. Combine Reducers:https://www.youtube.com/watch?v=EKsoj96HQGY

@@ -1,4 +1,5 @@
 //Let default state be an empty array where our history will go: Don't keep 0 otherwise the list will be empty
+//NOTE:Initializing at 0 will show first value in the list as zero
 const historyReducer = (state = [], action) => {
   switch (action.type) {
     case "HISTORY":

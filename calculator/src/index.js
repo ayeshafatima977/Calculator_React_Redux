@@ -19,6 +19,7 @@ const store = createStore(
 // store.subscribe(() => console.log(store.getState()));
 
 // Dispatch to send actions to our stores Reducer-It expects properly formatted action
+//NOTE:This was causing unwanted empty bullets in the lists.Don't use dispatch in index use only in App
 // store.dispatch(history(""));
 
 ReactDOM.render(
