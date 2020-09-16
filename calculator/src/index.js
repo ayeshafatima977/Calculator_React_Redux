@@ -9,6 +9,7 @@ import { createStore } from "redux";
 // Connects global store-store to our entire Calculator-App
 import { Provider } from "react-redux";
 // import { ThemeProvider } from "./ThemeContext";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 // //Created Combine Reducers
 // const combineReducers = redux.combineReducers;
@@ -34,8 +35,12 @@ const store = createStore(
 ReactDOM.render(
   // <ThemeProvider>
   <Provider store={store}>
-    <Calculator />,
-    <ResultList />
+    <Router>
+      <Route path="/" component={Calculator} exact />
+      <Route path="/past-calculations" component={ResultList} />
+    </Router>
+    {/* <Calculator />,
+    <ResultList /> */}
   </Provider>,
   // </ThemeProvider>
   document.getElementById("root")
