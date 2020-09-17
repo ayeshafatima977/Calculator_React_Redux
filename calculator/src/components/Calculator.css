@@ -78,11 +78,3 @@ input[type="submit"] {
 input[type="submit"]:hover {
   background-color: #45a049;
 }
-/* p {
-  width: 50%;
-  height: 50px;
-  display: flex;
-  flex-wrap: wrap;
-  padding: 14px 20px;
-  margin-left: 10px 0;
-} */
