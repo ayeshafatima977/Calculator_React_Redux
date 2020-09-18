@@ -3,7 +3,7 @@ import "./Calculator.css";
 //Link Redux to our react-component
 import { connect } from "react-redux";
 import { history } from "../actions/history";
-import historyReducer from "../reducers/history";
+// import historyReducer from "../reducers/history";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "../components/globalStyles";
 import { lightTheme, darkTheme } from "../components/Theme";
@@ -146,10 +146,11 @@ function Calculator(props) {
   );
 }
 
-export default connect(
-  //We setup a map state to props function
-  //State from Redux store represented in props as
-  (state) => {
-    return { pastHistory: state };
-  }
-)(Calculator);
+// You dont need state here since we didnot use props here
+//We are using connect() only t dispatch .Can also use state but it doesnt have any effect here since props aent used
+export default connect()(Calculator);
+//We setup a map state to props function
+//State from Redux store represented in props as
+// (state) => {
+//   return { pastHistory: state };
+// }
